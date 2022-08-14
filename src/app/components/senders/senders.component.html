@@ -1,0 +1,25 @@
+<div class="container">
+<br><br>
+  <div class="form"><h1>BEGIN TRANSACTION</h1>
+      <mat-form-field [formGroup]="checkoutForm" (submit)="submitData()" class="example-full-width" appearance="fill">
+      <div>
+        <mat-label>Customer ID</mat-label>
+        <input matInput type="text" formControlName="name" placeholder="Ex. 94105940439404" (keypress)="keyPressNumbers($event)" />
+        <!-- <mat-hint >{{ checkoutForm.get("name")?.getError("minlength").requiredLength }} / 14</mat-hint> -->
+        <div>
+          <!-- ? : safe navigation operator -->
+          <small *ngIf="checkoutForm.get('name')?.hasError('required')"
+            >Cutomer ID is required.</small>
+          <small *ngIf="checkoutForm.get('name')?.hasError('minlength')">Maximum {{ checkoutForm.get("name")?.getError("minlength").requiredLength }} chars is required.</small>
+  
+        </div>
+      </div>       
+    </mat-form-field>
+    <button type="submit" (click)="openDialog()">Submit</button> 
+    
+    <!-- <pre>{{ checkoutForm.get("name")?.errors | json }}</pre> -->
+  </div>
+  </div> 
+   
+    
+

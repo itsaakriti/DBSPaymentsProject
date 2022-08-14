@@ -1,0 +1,39 @@
+<div class="container">
+    <br><br>
+      <div class="form"><h1>CONTINUE TRANSACTION</h1>
+          <form [formGroup]="checkoutForm" (submit)="submitData()" class="example-full-width" appearance="fill">
+          <div>
+            <mat-label>BIC: </mat-label>
+            <input type="text" formControlName="bic" placeholder="Ex. ADBNXXXXXXXXX"  />
+            <div>
+              <!-- <small *ngIf="checkoutForm.get('bic')?.hasError('required')"
+                >BIC is required.</small> -->
+            </div>
+          </div>
+          <div>
+            <mat-label>Account Number: </mat-label>
+            <input type="text" formControlName="number" placeholder="Ex. 94105940439404" (keypress)="keyPressNumbers($event)" />
+             <!-- <mat-hint >{{ checkoutForm.get("number")?.getError("minlength").requiredLength }} / 14</mat-hint> -->
+            <div>
+              <!-- <small *ngIf="checkoutForm.get('number')?.hasError('required')"
+                >Account Number is required.</small>
+              <small *ngIf="checkoutForm.get('number')?.hasError('minlength')">Maximum {{ checkoutForm.get("name")?.getError("minlength").requiredLength }} chars is required.</small> -->
+            </div>
+          </div>
+          <div>
+            <mat-label>Account Holders Name: </mat-label>
+            <input type="text" formControlName="name" placeholder="Ex. Aakanksha" />
+            <div>
+              <!-- <small *ngIf="checkoutForm.get('name')?.hasError('required')"
+                >Cutomer ID is required.</small>
+              <small *ngIf="checkoutForm.get('name')?.hasError('minlength')">Maximum {{ checkoutForm.get("name")?.getError("minlength").requiredLength }} chars is required.</small> -->
+            </div>
+          </div>    
+        </form>
+        <button type="submit" (click) = "toTransactionPage()">Submit</button> 
+      </div>
+      </div>
+       
+        
+    
+    

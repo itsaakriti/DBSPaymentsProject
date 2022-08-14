@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <h1>DBSPay</h1>
+      <span class="menu-spacer"></span>
+      <div>
+        <a mat-button [routerLink]="'/'">Home </a>
+        <a mat-button [routerLink]="'/senders'"> Sender </a>
+        <a mat-button [routerLink]="'/recievers'"> Reciever </a>
+        <a mat-button [routerLink]="'/transaction'"> Transactions </a>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+<!-- 
+<a routerLink="/">Home</a> &nbsp; &nbsp;
+<a routerLink="/senders">Products</a> -->
+<!-- <a routerLink="/checkout">Checkout</a> -->
+<router-outlet></router-outlet>
+
+
+<!-- <app-home></app-home> -->
